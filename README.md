@@ -2,7 +2,7 @@
 
 Voici un code pour faire un petit combat de Pokemon !
 
-------------------------------------------------------
+-----
 
 ## Les Règles : 
 
@@ -12,7 +12,7 @@ Voici un code pour faire un petit combat de Pokemon !
 
 3ieme étape -> Combattre (le combat se fera automatiquement).
 
-------------------------------------------------------
+-----
 
 ## Infos supplémentaires : 
 
@@ -36,7 +36,7 @@ Voici un code pour faire un petit combat de Pokemon !
 
 -> Type NORMAL = Attaque normal, peu importe le type du Pokemon advèrse
 
-------------------------------------------------------
+-----
 
 ## ATTENTION :
 
