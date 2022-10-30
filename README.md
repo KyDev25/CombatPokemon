@@ -4,9 +4,9 @@ Voici un code pour faire un petit combat de Pokemon !
 
 Les Règles : 
 
-1ere étape -> Ajouter au minimun DEUX Pokemons.
-2ieme étape -> Faire un combat de Pokemon en choisissant SEULEMENT DEUX Pokemons.
-3ieme étape -> Combattre (le combat se fera automatiquement).
+1ere étape -> Ajouter au minimun DEUX Pokemons.\n
+2ieme étape -> Faire un combat de Pokemon en choisissant SEULEMENT DEUX Pokemons.\n
+3ieme étape -> Combattre (le combat se fera automatiquement).\n
 
 Précisions : 
 
