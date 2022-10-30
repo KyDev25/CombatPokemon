@@ -6,7 +6,7 @@ Les Règles :
 
 1ere étape -> Ajouter au minimun DEUX Pokemons.
 2ieme étape -> Faire un combat de Pokemon en choisissant SEULEMENT DEUX Pokemons.
-3ieme -> Combattre (le combat se fera automatiquement).
+3ieme étape -> Combattre (le combat se fera automatiquement).
 
 Précisions : 
 
