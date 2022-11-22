@@ -5,6 +5,7 @@ public class TypeFeu extends Pokemon {
         super(nom, hp, atk);
     }
 
+     // Method attack a Pokemon
     public void attack(Pokemon p){
 
         if (p.getClass().getSimpleName().equals("TypePlante")){

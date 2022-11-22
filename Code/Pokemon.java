@@ -1,11 +1,8 @@
 package ModelPokemon;
 
 public class Pokemon {
-    //nom du pokemon
     public String nom;
-    //vie du pokemon
     public float hp;
-    //attaque du pokemon
     public float atk;
 
     public Pokemon(String nom, float hp, float atk) {
@@ -14,9 +11,10 @@ public class Pokemon {
         this.atk = atk;
     }
 
-    public void attack(Pokemon p){
+    // Method attack a Pokemon
+    public void attack(Pokemon p) {
 
-        p.setHp(p.getHp()-this.atk);
+        p.setHp(p.getHp() - this.atk);
         System.out.println(getNom() + " attaque " + p.getNom() + "\n");
         System.out.println("Vous avez fait quelques dégats !");
         System.out.println("\nPokemon " + p.getNom() + "\n----------\n" + "HP : " + p.getHp());
@@ -24,7 +22,8 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return "Pokemon " + nom + "\n**********" + "\nHP : " + hp + "\nAttaque : " + atk + "\nType : NORMAL" + "\n----------\n";
+        return "Pokemon " + nom + "\n**********" + "\nHP : " + hp + "\nAttaque : " + atk + "\nType : NORMAL"
+                + "\n----------\n";
     }
 
     public String getNom() {

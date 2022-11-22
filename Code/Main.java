@@ -1,9 +1,9 @@
 package ModelPokemon;
 
-import  java.util.*;
+import java.util.*;
 
 public class Main {
-
+    // Creating Pokémon lists
     static List<Pokemon> pokemon = new ArrayList<>();
     static List<TypeFeu> typeFeu = new ArrayList<>();
     static List<TypeEau> typeEau = new ArrayList<>();
@@ -12,19 +12,21 @@ public class Main {
     static List<Pokemon> listCombat = new ArrayList<>();
     static Scanner scan;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         scan = new Scanner(System.in);
-
-        for (;;){
-            switch (choix()){
+        // Request of user's choice
+        for (;;) {
+            switch (choix()) {
                 case 1:
                     switchChoixAddPokemon();
                     break;
                 case 2:
                     switchChoixSuppPokemon();
+                    break;
                 case 3:
                     switchChoixCombatPokemon();
+                    break;
                 case 4:
                     return;
                 default:
@@ -34,8 +36,10 @@ public class Main {
         }
     }
 
-    public static int choix(){
-        System.out.println("ATTENTION : Tous les choix se font via l'index.\nDonc chaque choix est un nombre et non une lettre !\n");
+    // Function that gives the user the choice to add, delete, make a fight or leave
+    public static int choix() {
+        System.out.println(
+                "ATTENTION : Tous les choix se font via l'index.\nDonc chaque choix est un nombre et non une lettre !\n");
         System.out.println("Choisissez une option : \n");
         System.out.println("1 - Ajouter un Pokemon");
         System.out.println("2 - Supprimer un Pokemon");
@@ -46,7 +50,8 @@ public class Main {
         return choice;
     }
 
-    public static int choixAddPokemon(){
+    // Function that gives the user to add a Pokemon
+    public static int choixAddPokemon() {
         System.out.println("Choisissez une option : \n");
         System.out.println("1 - Ajouter un Pokemon de type NORMAL");
         System.out.println("2 - Ajouter un Pokemon de type FEU");
@@ -58,7 +63,8 @@ public class Main {
         return choiceAdd;
     }
 
-    public static int choixSuppPokemon(){
+    // Function that gives the user to delete a Pokemon
+    public static int choixSuppPokemon() {
         System.out.println("Choisissez une option : \n");
         System.out.println("1 - Supprimer un Pokemon de type NORMAL");
         System.out.println("2 - Supprimer un Pokemon de type FEU");
@@ -70,7 +76,8 @@ public class Main {
         return choiceSupp;
     }
 
-    public static int choixCombatPokemon(){
+    // Function that gives the user to make fight
+    public static int choixCombatPokemon() {
         System.out.println("Choisissez deux Pokemons : \n");
         System.out.println("1 - Pokemon de type NORMAL");
         System.out.println("2 - Pokemon de type FEU");
@@ -83,9 +90,10 @@ public class Main {
         return choiceCombat;
     }
 
+    // Function that allows you to choose the Pokemon to add
     public static void switchChoixAddPokemon() {
-        for (;;){
-            switch (choixAddPokemon()){
+        for (;;) {
+            switch (choixAddPokemon()) {
                 case 1:
                     addPokemonNormal();
                     break;
@@ -107,9 +115,10 @@ public class Main {
         }
     }
 
+    // Function that allows you to choose the Pokemon to delete
     public static void switchChoixSuppPokemon() {
-        for (;;){
-            switch (choixSuppPokemon()){
+        for (;;) {
+            switch (choixSuppPokemon()) {
                 case 1:
                     suppPokemonNormal();
                     break;
@@ -131,9 +140,10 @@ public class Main {
         }
     }
 
+    // Function that allows you to choose the Pokemon to make fight
     public static void switchChoixCombatPokemon() {
-        for (;;){
-            switch (choixCombatPokemon()){
+        for (;;) {
+            switch (choixCombatPokemon()) {
                 case 1:
                     choixPokemonNormal();
                     break;
@@ -158,11 +168,12 @@ public class Main {
         }
     }
 
-    public static void addPokemonNormal(){
+    // Function to add the selected Pokemon Normal
+    public static void addPokemonNormal() {
         System.out.println("Son Nom : ");
         String nom = scan.next();
         nom = nom.substring(0, 1).toUpperCase() + nom.substring(1);
-        for (;;){
+        for (;;) {
             try {
                 System.out.println("Son HP : ");
                 float hp = Float.parseFloat(scan.next());
@@ -170,18 +181,18 @@ public class Main {
                 float atk = Float.parseFloat(scan.next());
                 pokemon.add(new Pokemon(nom, hp, atk));
                 return;
-            }
-            catch (NumberFormatException number){
+            } catch (NumberFormatException number) {
                 System.out.println("\nVeuillez entrer un nombre...\n");
             }
         }
     }
 
-    public static void addPokemonFeu(){
+    // Function to add the selected Pokemon Fire
+    public static void addPokemonFeu() {
         System.out.println("Son Nom : ");
         String nom = scan.next();
         nom = nom.substring(0, 1).toUpperCase() + nom.substring(1);
-        for (;;){
+        for (;;) {
             try {
                 System.out.println("Son HP : ");
                 float hp = Float.parseFloat(scan.next());
@@ -189,18 +200,18 @@ public class Main {
                 float atk = Float.parseFloat(scan.next());
                 typeFeu.add(new TypeFeu(nom, hp, atk));
                 return;
-            }
-            catch (NumberFormatException number){
+            } catch (NumberFormatException number) {
                 System.out.println("\nVeuillez entrer un nombre...\n");
             }
         }
     }
 
-    public static void addPokemonEau(){
+    // Function to add the selected Pokemon Water
+    public static void addPokemonEau() {
         System.out.println("Son Nom : ");
         String nom = scan.next();
         nom = nom.substring(0, 1).toUpperCase() + nom.substring(1);
-        for (;;){
+        for (;;) {
             try {
                 System.out.println("Son HP : ");
                 float hp = Float.parseFloat(scan.next());
@@ -208,18 +219,18 @@ public class Main {
                 float atk = Float.parseFloat(scan.next());
                 typeEau.add(new TypeEau(nom, hp, atk));
                 return;
-            }
-            catch (NumberFormatException number){
+            } catch (NumberFormatException number) {
                 System.out.println("\nVeuillez entrer un nombre...\n");
             }
         }
     }
 
-    public static void addPokemonPlante(){
+    // Function to add the selected Pokemon Plant
+    public static void addPokemonPlante() {
         System.out.println("Son Nom : ");
         String nom = scan.next();
         nom = nom.substring(0, 1).toUpperCase() + nom.substring(1);
-        for (;;){
+        for (;;) {
             try {
                 System.out.println("Son HP : ");
                 float hp = Float.parseFloat(scan.next());
@@ -227,17 +238,17 @@ public class Main {
                 float atk = Float.parseFloat(scan.next());
                 typePlante.add(new TypePlante(nom, hp, atk));
                 return;
-            }
-            catch (NumberFormatException number){
+            } catch (NumberFormatException number) {
                 System.out.println("\nVeuillez entrer un nombre...\n");
             }
         }
     }
 
-    public static void suppPokemonNormal(){
+    // Function to delete the selected Pokemon Normal
+    public static void suppPokemonNormal() {
 
         int number = 1;
-        for (Pokemon normal: pokemon){
+        for (Pokemon normal : pokemon) {
             System.out.println(number + " - " + normal.getNom());
             number++;
         }
@@ -245,17 +256,17 @@ public class Main {
         int choix = Integer.parseInt(scan.next());
 
         try {
-                pokemon.remove(choix-1);
-            }
-        catch (IndexOutOfBoundsException index){
-                System.out.println("\nLe Pokemon sélectionné n'existe pas...\n");
-            }
+            pokemon.remove(choix - 1);
+        } catch (IndexOutOfBoundsException index) {
+            System.out.println("\nLe Pokemon sélectionné n'existe pas...\n");
+        }
     }
 
-    public static void suppPokemonFeu(){
+    // Function to delete the selected Pokemon Fire
+    public static void suppPokemonFeu() {
 
         int number = 1;
-        for (TypeFeu feu: typeFeu){
+        for (TypeFeu feu : typeFeu) {
             System.out.println(number + " - " + feu.getNom());
             number++;
         }
@@ -263,35 +274,35 @@ public class Main {
         int choix = Integer.parseInt(scan.next());
 
         try {
-                typeFeu.remove(choix-1);
-            }
-        catch (IndexOutOfBoundsException index){
-                System.out.println("\nLe Pokemon sélectionné n'existe pas...\n");
-            }
+            typeFeu.remove(choix - 1);
+        } catch (IndexOutOfBoundsException index) {
+            System.out.println("\nLe Pokemon sélectionné n'existe pas...\n");
+        }
     }
 
-    public static void suppPokemonEau(){
+    // Function to delete the selected Pokemon Water
+    public static void suppPokemonEau() {
 
         int number = 1;
-        for (TypeEau eau: typeEau){
+        for (TypeEau eau : typeEau) {
             System.out.println(number + " - " + eau.getNom());
             number++;
         }
         System.out.println("Votre choix : ");
         int choix = Integer.parseInt(scan.next());
 
-            try {
-                typeEau.remove(choix-1);
-            }
-            catch (IndexOutOfBoundsException index){
-                System.out.println("\nLe Pokemon sélectionné n'existe pas...\n");
-            }
+        try {
+            typeEau.remove(choix - 1);
+        } catch (IndexOutOfBoundsException index) {
+            System.out.println("\nLe Pokemon sélectionné n'existe pas...\n");
+        }
     }
 
-    public static void suppPokemonPlante(){
+    // Function to delete the selected Pokemon Plant
+    public static void suppPokemonPlante() {
 
         int number = 1;
-        for (TypePlante plante: typePlante){
+        for (TypePlante plante : typePlante) {
             System.out.println(number + " - " + plante.getNom());
             number++;
         }
@@ -299,17 +310,17 @@ public class Main {
         int choix = Integer.parseInt(scan.next());
 
         try {
-                typePlante.remove(choix-1);
-            }
-            catch (IndexOutOfBoundsException index){
-                System.out.println("\nLe Pokemon sélectionné n'existe pas...\n");
-            }
+            typePlante.remove(choix - 1);
+        } catch (IndexOutOfBoundsException index) {
+            System.out.println("\nLe Pokemon sélectionné n'existe pas...\n");
+        }
     }
 
-    public static void choixPokemonNormal(){
-        if (listCombat.size() < 2){
+    // Function to view a list of Pokemon Normal
+    public static void choixPokemonNormal() {
+        if (listCombat.size() < 2) {
             int number = 1;
-            for (Pokemon normal: pokemon){
+            for (Pokemon normal : pokemon) {
                 System.out.println(number + " - \n" + normal.toString());
                 number++;
             }
@@ -317,9 +328,8 @@ public class Main {
             int choix = Integer.parseInt(scan.next());
 
             try {
-                listCombat.add(pokemon.get(choix-1));
-            }
-            catch (IndexOutOfBoundsException index){
+                listCombat.add(pokemon.get(choix - 1));
+            } catch (IndexOutOfBoundsException index) {
                 System.out.println("\nCe Pokemon n'existe pas...\n");
             }
         } else {
@@ -327,10 +337,11 @@ public class Main {
         }
     }
 
-    public static void choixPokemonFeu(){
-        if (listCombat.size() < 2){
+    // Function to view a list of Pokemon Fire
+    public static void choixPokemonFeu() {
+        if (listCombat.size() < 2) {
             int number = 1;
-            for (TypeFeu feu: typeFeu){
+            for (TypeFeu feu : typeFeu) {
                 System.out.println(number + " - \n" + feu.toString());
                 number++;
             }
@@ -338,20 +349,20 @@ public class Main {
             int choix = Integer.parseInt(scan.next());
 
             try {
-                listCombat.add(typeFeu.get(choix-1));
-            }
-            catch (IndexOutOfBoundsException index){
-                    System.out.println("\nCe Pokemon n'existe pas...\n");
+                listCombat.add(typeFeu.get(choix - 1));
+            } catch (IndexOutOfBoundsException index) {
+                System.out.println("\nCe Pokemon n'existe pas...\n");
             }
         } else {
             System.out.println("\nVous avez déjà séléctionné deux Pokemons...\n");
         }
     }
 
-    public static void choixPokemonEau(){
-        if (listCombat.size() < 2){
+    // Function to view a list of Pokemon Water
+    public static void choixPokemonEau() {
+        if (listCombat.size() < 2) {
             int number = 1;
-            for (TypeEau eau: typeEau){
+            for (TypeEau eau : typeEau) {
                 System.out.println(number + " - \n" + eau.toString());
                 number++;
             }
@@ -359,9 +370,8 @@ public class Main {
             int choix = Integer.parseInt(scan.next());
 
             try {
-                listCombat.add(typeEau.get(choix-1));
-            }
-            catch (IndexOutOfBoundsException index){
+                listCombat.add(typeEau.get(choix - 1));
+            } catch (IndexOutOfBoundsException index) {
                 System.out.println("\nCe Pokemon n'existe pas...\n");
             }
         } else {
@@ -369,10 +379,11 @@ public class Main {
         }
     }
 
-    public static void choixPokemonPlante(){
-        if (listCombat.size() < 2){
+    // Function to view a list of Pokemon Plant
+    public static void choixPokemonPlante() {
+        if (listCombat.size() < 2) {
             int number = 1;
-            for (TypePlante plante: typePlante){
+            for (TypePlante plante : typePlante) {
                 System.out.println(number + " - \n" + plante.toString());
                 number++;
             }
@@ -380,9 +391,8 @@ public class Main {
             int choix = Integer.parseInt(scan.next());
 
             try {
-                listCombat.add(typePlante.get(choix-1));
-            }
-            catch (IndexOutOfBoundsException index){
+                listCombat.add(typePlante.get(choix - 1));
+            } catch (IndexOutOfBoundsException index) {
                 System.out.println("\nCe Pokemon n'existe pas...\n");
             }
         } else {
@@ -390,31 +400,30 @@ public class Main {
         }
     }
 
+    // Function to make figth with selected Pokemon
     public static void combatPokemon() {
 
-            System.out.println("Voici la liste des combattants : \n");
+        System.out.println("Voici la liste des combattants : \n");
 
-            try {
-                System.out.println(listCombat.get(0));
-                System.out.println("VS\n");
-                System.out.println(listCombat.get(1));
+        try {
+            System.out.println(listCombat.get(0));
+            System.out.println("VS\n");
+            System.out.println(listCombat.get(1));
 
-                for (;;){
-                    if (listCombat.get(0).getHp() >= 0 || listCombat.get(1).getHp() >= 0) {
-                        listCombat.get(0).attack(listCombat.get(1));
-                        listCombat.get(1).attack(listCombat.get(0));
-                    } else if (listCombat.get(0).getHp() < 0){
-                        System.out.println(listCombat.get(0).getNom() + " a été vainqu !");
-                        return;
-                    } else if (listCombat.get(1).getHp() < 0) {
-                        System.out.println(listCombat.get(1).getNom() + " a été vainqu !");
-                        return;
-                    }
+            for (;;) {
+                if (listCombat.get(0).getHp() >= 0 || listCombat.get(1).getHp() >= 0) {
+                    listCombat.get(0).attack(listCombat.get(1));
+                    listCombat.get(1).attack(listCombat.get(0));
+                } else if (listCombat.get(0).getHp() < 0) {
+                    System.out.println(listCombat.get(0).getNom() + " a été vainqu !");
+                    return;
+                } else if (listCombat.get(1).getHp() < 0) {
+                    System.out.println(listCombat.get(1).getNom() + " a été vainqu !");
+                    return;
                 }
-            } catch (IndexOutOfBoundsException index){
-                System.out.println("\nVous devez d'abord choisir deux Pokemons...\n");
             }
+        } catch (IndexOutOfBoundsException index) {
+            System.out.println("\nVous devez d'abord choisir deux Pokemons...\n");
+        }
     }
 }
-
-
